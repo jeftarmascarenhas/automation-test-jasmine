@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+   
+
+<script>
+'use sctric';
+
+    class maiorEmenor {
+
+        constructor(){
+            this.maior;
+            this.menor
+        }
+        
+        encontra (nums) {
+            
+            this.maior = Number.MAX_VALUE;
+            this.menor = Number.MIN_VALUE;
+
+
+                nums.forEach( num => {
+                    <!-- debugger; -->
+                    if(num > this.maior) this.maior = num; 
+
+                    else if(num < this.menor) this.menor = num;
+                    
+                });
+        }
+        
+        pegaMaior () { return this.maior; }
+        pegaMenor () { return this.menor; }
+
+
+    }
+
+let algoritmo = new maiorEmenor();
+
+algoritmo.encontra([5, 15, 7, 9]);
+
+console.log(algoritmo.pegaMaior());
+console.log(algoritmo.pegaMenor());
+
+
+</script>
+    
+</body>
+</html>
