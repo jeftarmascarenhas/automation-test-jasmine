@@ -21,6 +21,13 @@ describe('Consulta', () => {
         expect(zezinho.preco()).toEqual(25);
     });
 
+    it('Deve cobrar o preço normal com acrescimo do plano particular', () => {
+        let zezo = new Paciente('Zezo do gás', 30, 56, 1.70);
+        let consultZezo = new Consulta(zezo, ['Exame de prostata'], true, false);
+
+        expect(consultZezo.preco()).toEqual(50);
+    });
+
     it('Deve cobar o valor do precedimento de raio-x elevado 2 se for particular', () => {
         let biu = new Consulta('Biu', ['raio-x'], true, false);
         expect(biu.preco()).toEqual(110);
